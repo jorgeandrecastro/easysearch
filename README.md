@@ -11,7 +11,7 @@ Bibliothèque légère de recherche floue (fuzzy search), conçue pour le projet
 
 [Distance de Levenshtein](https://fr.wikipedia.org/wiki/Distance_de_Levenshtein) : nombre minimal d'insertions, suppressions ou substitutions pour transformer une chaîne en une autre. Convertie en score de similarité entre 0.0 et 1.0.
 
-La comparaison utilise une similarité **partielle** : une requête courte est comparée à la meilleure sous-fenêtre du candidat plutôt qu'au candidat entier — "andr" trouve correctement "Andre Dubois", même si les deux chaînes ont des longueurs très différentes.
+La comparaison utilise une similarité **partielle** : une requête courte est comparée à la meilleure sous-fenêtre du candidat plutôt qu'au candidat entier "andr" trouve correctement "Andre Dubois", même si les deux chaînes ont des longueurs très différentes.
 
 ## Installation
 
@@ -91,11 +91,11 @@ cargo run --example search_demo
 
 ## Note de performance
 
-La distance de Levenshtein a une complexité O(n×m) par comparaison, et `partial_similarity` répète cette comparaison pour chaque position possible dans le candidat quand la requête est plus courte — donc plus coûteuse qu'une comparaison directe. Pour de très grandes listes de candidats (plusieurs dizaines de milliers), envisagez un filtrage préalable (ex: recherche par préfixe en base de données) avant d'appliquer `easysearch` sur un sous-ensemble réduit.
+La distance de Levenshtein a une complexité O(n×m) par comparaison, et `partial_similarity` répète cette comparaison pour chaque position possible dans le candidat quand la requête est plus courte donc plus coûteuse qu'une comparaison directe. Pour de très grandes listes de candidats (plusieurs dizaines de milliers), envisagez un filtrage préalable (ex: recherche par préfixe en base de données) avant d'appliquer `easysearch` sur un sous-ensemble réduit.
 
 ## Historique des versions
 
-- **0.1.0** — Version initiale avec `search`, `search_by`, `levenshtein_distance`, `similarity` et `partial_similarity` pour la recherche de termes courts dans des textes plus longs.
+- **0.1.0** :Version initiale avec `search`, `search_by`, `levenshtein_distance`, `similarity` et `partial_similarity` pour la recherche de termes courts dans des textes plus longs.
 
 ## License
 
