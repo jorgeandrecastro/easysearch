@@ -1,0 +1,22 @@
+[package]
+name = "easysearch"
+version = "0.1.0"
+edition = "2024"
+authors = ["Jorge Andre Castro"]
+description = "Bibliothèque légère de recherche floue (fuzzy search) pour le projet Hodoe,tolère les fautes de frappe via la distance de Levenshtein."
+license = "GPL-2.0-or-later"
+repository = "https://github.com/jorgeandrecastro/easysearch"
+readme = "README.md"
+keywords = ["fuzzy-search", "levenshtein", "search", "similarity", "text"]
+categories = ["algorithms", "text-processing"]
+
+[lib]
+name = "easysearch"
+path = "src/lib.rs"
+
+[[example]]
+name = "search_demo"
+path = "examples/search_demo.rs"
+
+[dependencies]
+# Aucune dépendance externe : la lib repose uniquement sur std.
